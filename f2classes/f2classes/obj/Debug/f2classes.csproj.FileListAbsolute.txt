@@ -1,0 +1,9 @@
+C:\Users\I240083\source\repos\f2classes\f2classes\obj\Debug\f2classes.csproj.AssemblyReference.cache
+C:\Users\I240083\source\repos\f2classes\f2classes\obj\Debug\f2classes.Properties.Resources.resources
+C:\Users\I240083\source\repos\f2classes\f2classes\obj\Debug\f2classes.csproj.GenerateResource.cache
+C:\Users\I240083\source\repos\f2classes\f2classes\obj\Debug\f2classes.csproj.CoreCompileInputs.cache
+C:\Users\I240083\source\repos\f2classes\f2classes\bin\Debug\f2classes.exe.config
+C:\Users\I240083\source\repos\f2classes\f2classes\bin\Debug\f2classes.exe
+C:\Users\I240083\source\repos\f2classes\f2classes\bin\Debug\f2classes.pdb
+C:\Users\I240083\source\repos\f2classes\f2classes\obj\Debug\f2classes.exe
+C:\Users\I240083\source\repos\f2classes\f2classes\obj\Debug\f2classes.pdb
