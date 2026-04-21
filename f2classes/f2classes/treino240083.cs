@@ -1,102 +1,106 @@
 ﻿namespace f2classes
 {
-    internal class treino240083
-    {
-        public class treino
+    
+        public class Treino240083
         {
+            private double distanciaKm;
+            private int duracaoSegundos;
+            private string tipoTreino = "";
 
-            private double distancia;
-            private int duracao;
-            private string tipotreino = "";
+            public double GetDistancia() { return distanciaKm; }
 
-            public double Getdistancia() { return distancia; }
-            public void Setdistancia(double km)
+            public void SetDistancia(double novaDistancia)
             {
-                if (km > 0)
-                    distancia = km;
+                if (novaDistancia > 0)
+                    distanciaKm = novaDistancia;
             }
-            public int GetDuracao() { return duracao; }
-            public void SetDuracao(int seg)
-            {
-                if (seg > 0)
-                    duracao = seg;
-            }
-            public string GetTipotreino() { return tipotreino; }
-            public void SetTipotreino(string t)
-            {
-                t = t.ToLower();
-                if (t == "caminhada" || t == "corrida" || t == "misto")
-                    tipotreino = t;
-            }
-            public double Media(double d, int durac)
-            {
-                return (d * 1000 / durac);
-            }
-            public void DistCalVal(int t, out double d, out double v)
-            {
-                double w = Media(this.distancia, this.duracao);
 
-                if (this.duracao > t)
+            public int GetDuracao() { return duracaoSegundos; }
+
+            public void SetDuracao(int novaDuracao)
+            {
+                if (novaDuracao > 0)
+                    duracaoSegundos = novaDuracao;
+            }
+
+            public string GetTipoTreino() { return tipoTreino; }
+
+            public void SetTipoTreino(string novoTipo)
+            {
+                novoTipo = novoTipo.ToLower();
+
+                if (novoTipo == "caminhada" || novoTipo == "corrida" || novoTipo == "misto")
+                    tipoTreino = novoTipo;
+            }
+
+            public double CalcVelMedia()
+            {
+                return (distanciaKm * 1000) / duracaoSegundos;
+            }
+
+            public void ObterDistEVeloc(int duracaoMinima, out double distanciaResult, out double velocResult)
+            {
+                double velocidadeMedia = CalcVelMedia();
+
+                if (this.duracaoSegundos > duracaoMinima)
                 {
-                    d = this.distancia;
-                    v = w;
+                    distanciaResult = this.distanciaKm;
+                    velocResult = velocidadeMedia;
                 }
                 else
                 {
-                    d = -1;
-                    v = -1;
+                    distanciaResult = -1;
+                    velocResult = -1;
                 }
             }
-            public double Ds(string tipo)
-            {
-                tipo = tipo.ToLower();
 
-                if (this.tipotreino == tipo)
+            public double ObterVelocidadePorTipo(string tipoProcurado)
+            {
+                tipoProcurado = tipoProcurado.ToLower();
+
+                if (this.tipoTreino == tipoProcurado)
                 {
-                    return Media(this.distancia, this.duracao);
+                    return CalcVelMedia();
                 }
                 else
                 {
                     return -1.0;
                 }
             }
-            public treino()
+
+            public Treino240083()
             {
-                this.distancia = 10.0;
-                this.duracao = 3600;
-                this.tipotreino = "misto";
+                this.distanciaKm = 10.0;
+                this.duracaoSegundos = 3600;
+                this.tipoTreino = "Misto";
             }
-            public treino(double d, int dur, string tipo)
+
+            public Treino240083(double distanciaInicial, int duracaoInicial, string tipoInicial)
             {
-                Setdistancia(d);
-                SetDuracao(dur);
-                SetTipotreino(tipo);
+                SetDistancia(distanciaInicial);
+                SetDuracao(duracaoInicial);
+                SetTipoTreino(tipoInicial);
             }
+
             public string InfoTreino()
             {
-                double horas = this.duracao / 3600.0;
-                return this.tipotreino + ": " + this.distancia + " (" + horas + " horas)";
+                double duracaoHoras = this.duracaoSegundos / 3600.0;
+                return tipoTreino + ": " + distanciaKm + " (" + duracaoHoras + " horas)";
             }
-            public int ComparaVelocidade(treino outro)
-            {
-                double v1 = Media(this.distancia, this.duracao);
-                double v2 = Media(outro.distancia, outro.duracao);
 
-               
-                if (v1 > 8.33 || v2 > 8.33)
+            public int ComparaVelocidade(Treino240083 outroTreino)
+            {
+                double velocidadeAtual = CalcVelMedia();
+                double velocidadeOutro = CalcVelMedia();
+
+                if (velocidadeAtual > 8.33 || velocidadeOutro > 8.33)
                     return 0;
 
-                if (v1 > v2)
+                if (velocidadeAtual < velocidadeOutro)
                     return 1;
-                else if (v1 < v2)
-                    return -1;
                 else
-                    return 2;
+                    return -1;
             }
         }
-    }
+    
 }
-
-
-
-
