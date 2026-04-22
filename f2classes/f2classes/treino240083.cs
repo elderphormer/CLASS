@@ -1,4 +1,8 @@
-﻿namespace f2classes
+﻿using System;
+using System.Diagnostics.Eventing.Reader;
+
+
+namespace f2classes
 {
     
         public class Treino240083
@@ -25,14 +29,21 @@
 
             public string GetTipoTreino() { return tipoTreino; }
 
-            public void SetTipoTreino(string novoTipo)
+        public void SetTipoTreino(string novoTipo)
+        {
+            tipoTreino.ToLower().Trim();
+
+            if (novoTipo == "caminhada" || novoTipo == "corrida" || novoTipo == "misto")
             {
-                novoTipo = novoTipo.ToLower();
-
-                if (novoTipo == "caminhada" || novoTipo == "corrida" || novoTipo == "misto")
-                    tipoTreino = novoTipo;
+                tipoTreino = char.ToUpper(novoTipo[0]) + tipoTreino.Substring(1);
+                tipoTreino = novoTipo;
             }
-
+            else
+                throw new ArgumentException("valor Invalido");
+            
+                    
+        }
+        
             public double CalcVelMedia()
             {
                 return (distanciaKm * 1000) / duracaoSegundos;
@@ -65,7 +76,7 @@
                 else
                 {
                     return -1.0;
-                }
+                }   
             }
 
             public Treino240083()
@@ -88,19 +99,18 @@
                 return tipoTreino + ": " + distanciaKm + " (" + duracaoHoras + " horas)";
             }
 
-            public int ComparaVelocidade(Treino240083 outroTreino)
-            {
-                double velocidadeAtual = CalcVelMedia();
-                double velocidadeOutro = CalcVelMedia();
+        public int ComparaVelocidade(Treino240083 outroTreino)
+        {
+            
 
-                if (velocidadeAtual > 8.33 || velocidadeOutro > 8.33)
-                    return 0;
+            if (this.CalcVelMedia() > 8.33 || outroTreino.CalcVelMedia() > 8.33)
+                return 0;
 
-                if (velocidadeAtual < velocidadeOutro)
-                    return 1;
-                else
-                    return -1;
-            }
+            if (this.CalcVelMedia() < outroTreino.CalcVelMedia())
+                return 1;
+            else
+                return -1;
         }
+    }
     
 }

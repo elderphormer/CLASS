@@ -29,16 +29,41 @@
         private void InitializeComponent()
         {
             this.listView1 = new System.Windows.Forms.ListView();
+            this.Distancia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Duraçao = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TipoTreino = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listView1
             // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Distancia,
+            this.Duraçao,
+            this.TipoTreino});
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(104, 44);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(592, 371);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // Distancia
+            // 
+            this.Distancia.Text = "Distancia";
+            this.Distancia.Width = 189;
+            // 
+            // Duraçao
+            // 
+            this.Duraçao.Text = "Duraçao";
+            this.Duraçao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Duraçao.Width = 189;
+            // 
+            // TipoTreino
+            // 
+            this.TipoTreino.Text = "TipoTreino";
+            this.TipoTreino.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TipoTreino.Width = 165;
             // 
             // Form1
             // 
@@ -55,6 +80,9 @@
         #endregion
 
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader Distancia;
+        private System.Windows.Forms.ColumnHeader Duraçao;
+        private System.Windows.Forms.ColumnHeader TipoTreino;
     }
 }
 
