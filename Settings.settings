@@ -1,0 +1,57 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Nums240083
+{
+    public class Num33Zero3
+    {
+        private int m_num;
+
+        public Num33Zero3(int num)
+        {
+            setValor(num);
+        }
+
+        private int Valido(int num)
+        {
+            if (num <= 0) return 0;
+
+            int soma = 0;
+
+            while (num > 0)
+            {
+                int d = num % 10;
+                if (d == 3) return 0;
+                soma += d;
+                num /= 10;
+            }
+
+            if (soma == 33) return 1;
+            return 0;
+        }
+
+        public int valor
+        {
+            get { return m_num; }
+            set
+            {
+                if (Valido(value) == 0)
+                    throw new ArgumentException();
+                m_num = value;
+            }
+        }
+
+        public void setValor(int num)
+        {
+            valor = num;
+        }
+
+    }
+
+
+    }
+     
+

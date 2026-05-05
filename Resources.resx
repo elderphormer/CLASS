@@ -1,0 +1,121 @@
+﻿namespace Nums240083
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.lblNumero = new System.Windows.Forms.Label();
+            this.btnInserir = new System.Windows.Forms.Button();
+            this.btnMenor = new System.Windows.Forms.Button();
+            this.btnSoma = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(12, 194);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(454, 196);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // txtNumero
+            // 
+            this.txtNumero.Location = new System.Drawing.Point(23, 66);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(100, 22);
+            this.txtNumero.TabIndex = 1;
+            this.txtNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblNumero
+            // 
+            this.lblNumero.AutoSize = true;
+            this.lblNumero.Location = new System.Drawing.Point(20, 47);
+            this.lblNumero.Name = "lblNumero";
+            this.lblNumero.Size = new System.Drawing.Size(55, 16);
+            this.lblNumero.TabIndex = 2;
+            this.lblNumero.Text = "Número";
+            // 
+            // btnInserir
+            // 
+            this.btnInserir.Location = new System.Drawing.Point(177, 78);
+            this.btnInserir.Name = "btnInserir";
+            this.btnInserir.Size = new System.Drawing.Size(75, 23);
+            this.btnInserir.TabIndex = 3;
+            this.btnInserir.Text = "Inserir";
+            this.btnInserir.UseVisualStyleBackColor = true;
+            // 
+            // btnMenor
+            // 
+            this.btnMenor.Location = new System.Drawing.Point(177, 151);
+            this.btnMenor.Name = "btnMenor";
+            this.btnMenor.Size = new System.Drawing.Size(75, 23);
+            this.btnMenor.TabIndex = 4;
+            this.btnMenor.Text = "Menor";
+            this.btnMenor.UseVisualStyleBackColor = true;
+            // 
+            // btnSoma
+            // 
+            this.btnSoma.Location = new System.Drawing.Point(271, 151);
+            this.btnSoma.Name = "btnSoma";
+            this.btnSoma.Size = new System.Drawing.Size(87, 23);
+            this.btnSoma.TabIndex = 5;
+            this.btnSoma.Text = "Somatório";
+            this.btnSoma.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(478, 418);
+            this.Controls.Add(this.btnSoma);
+            this.Controls.Add(this.btnMenor);
+            this.Controls.Add(this.btnInserir);
+            this.Controls.Add(this.lblNumero);
+            this.Controls.Add(this.txtNumero);
+            this.Controls.Add(this.listView1);
+            this.MaximizeBox = false;
+            this.Name = "Form1";
+            this.Text = "Números 33Zero3";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.TextBox txtNumero;
+        private System.Windows.Forms.Label lblNumero;
+        private System.Windows.Forms.Button btnInserir;
+        private System.Windows.Forms.Button btnMenor;
+        private System.Windows.Forms.Button btnSoma;
+    }
+}
+
